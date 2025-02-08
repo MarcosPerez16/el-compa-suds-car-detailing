@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -21,7 +22,7 @@ export function Navbar() {
     <header className='sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60'>
       <nav className='container mx-auto px-4 h-16 flex items-center justify-between'>
         {/* Logo */}
-        <a href='/' className='font-bold text-xl flex items-center gap-2'>
+        <Link href='/' className='font-bold text-xl flex items-center gap-2'>
           <Image
             src='/images/branding/logo-img-transparent.png'
             alt='Compa Suds Logo'
@@ -30,18 +31,18 @@ export function Navbar() {
             className='object-contain'
           />
           El Compa Suds
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className='hidden md:flex items-center gap-6'>
           {routes.map((route) => (
-            <a
+            <Link
               key={route.href}
               href={route.href}
               className='text-sm font-medium transition-colors hover:text-blue-600'
             >
               {route.label}
-            </a>
+            </Link>
           ))}
           <Button>Book Now</Button>
         </div>
@@ -57,14 +58,14 @@ export function Navbar() {
           <SheetContent side='right'>
             <div className='flex flex-col gap-4 mt-4'>
               {routes.map((route) => (
-                <a
+                <Link
                   key={route.href}
                   href={route.href}
                   className='text-sm font-medium transition-colors hover:text-blue-600'
                   onClick={() => setIsOpen(false)}
                 >
                   {route.label}
-                </a>
+                </Link>
               ))}
               <Button className='mt-2'>Book Now</Button>
             </div>
