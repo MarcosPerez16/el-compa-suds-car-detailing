@@ -42,9 +42,10 @@ export default function Home() {
             <div className='bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow'>
               <div className='relative aspect-square w-full mb-4 rounded-lg overflow-hidden'>
                 <Image
-                  src='/service1.jpg'
+                  src='/images/services/service1.jpg'
                   alt='Exterior Detailing'
                   fill
+                  sizes='(max-width: 768px) 100vw, 33vw'
                   className='object-cover'
                 />
               </div>
@@ -57,9 +58,10 @@ export default function Home() {
             <div className='bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow'>
               <div className='relative aspect-square w-full mb-4 rounded-lg overflow-hidden'>
                 <Image
-                  src='/service2.jpg'
+                  src='/images/services/service2.jpg'
                   alt='Interior Detailing'
                   fill
+                  sizes='(max-width: 768px) 100vw, 33vw'
                   className='object-cover'
                 />
               </div>
@@ -72,9 +74,10 @@ export default function Home() {
             <div className='bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow'>
               <div className='relative aspect-square w-full mb-4 rounded-lg overflow-hidden'>
                 <Image
-                  src='/service3.jpg'
+                  src='/images/services/service3.jpg'
                   alt='Full Detailing'
                   fill
+                  sizes='(max-width: 768px) 100vw, 33vw'
                   className='object-cover'
                 />
               </div>
