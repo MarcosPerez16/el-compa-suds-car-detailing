@@ -6,6 +6,8 @@ import {
   GallerySection,
   CTASection,
   FooterSection,
+  TestimonialSection,
+  WhyChooseUsSection,
 } from '@/components/sections';
 
 export default function Home() {
@@ -14,7 +16,9 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <WhyChooseUsSection />
       <GallerySection />
+      <TestimonialSection />
       <CTASection />
       <FooterSection />
     </div>
