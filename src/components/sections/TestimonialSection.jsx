@@ -1,3 +1,4 @@
+import React from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Quote, Star } from 'lucide-react';
 
@@ -53,12 +54,12 @@ const testimonials = [
 
 function StarRating({ rating }) {
   return (
-    <div className='flex justify-center text-yellow-500 mb-2'>
+    <div className='flex items-center gap-1 mt-2'>
       {[...Array(5)].map((_, index) => (
         <Star
           key={index}
-          className={`w-5 h-5 ${
-            index < rating ? 'fill-current' : 'stroke-current'
+          className={`w-4 h-4 ${
+            index < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
           }`}
         />
       ))}
@@ -69,37 +70,31 @@ function StarRating({ rating }) {
 function Avatar({ src, name, role }) {
   return (
     <div className='flex flex-col items-center'>
-      <div className='w-24 h-24 mb-3 rounded-full overflow-hidden border-4 border-primary/50 transition-all duration-300 group-hover:border-primary'>
-        <img
-          src={src}
-          alt={name}
-          className='w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110'
-        />
-      </div>
-      <div className='text-center'>
-        <h3 className='text-xl font-semibold text-foreground transition-colors duration-300 group-hover:text-primary'>
-          {name}
-        </h3>
-        <p className='text-sm text-muted-foreground'>{role}</p>
-      </div>
+      <img
+        src={src}
+        alt={name}
+        className='w-16 h-16 rounded-full object-cover mb-2'
+      />
+      <h3 className='font-semibold text-lg'>{name}</h3>
+      <p className='text-sm text-muted-foreground'>{role}</p>
     </div>
   );
 }
 
 export default function TestimonialSection() {
   return (
-    <section className='py-16 bg-background'>
+    <section className='py-16 bg-gradient-to-br from-gray-50 to-orange-50'>
       <div className='container mx-auto px-4 text-center'>
-        <h2 className='text-4xl font-bold text-foreground mb-12 animate-fade-in'>
+        <h2 className='text-4xl font-bold mb-12 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
           What Our Customers Say
         </h2>
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className='group shadow-lg hover:shadow-xl transition-all duration-300 border-border/50 hover:border-primary/50 transform hover:-translate-y-2 overflow-hidden'
+              className='group bg-white/70 shadow-lg hover:shadow-xl transition-all duration-300 border-border/50 hover:border-primary/50 transform hover:-translate-y-2 overflow-hidden'
             >
-              <CardHeader className='flex flex-col items-center pb-4 bg-gray-50/50 group-hover:bg-primary/5 transition-colors duration-300'>
+              <CardHeader className='flex flex-col items-center pb-4 bg-gray-50/50 group-hover:bg-orange-50/50 transition-colors duration-300'>
                 <Avatar
                   src={testimonial.image}
                   name={testimonial.name}

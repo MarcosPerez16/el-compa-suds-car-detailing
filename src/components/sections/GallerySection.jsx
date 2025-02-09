@@ -1,15 +1,16 @@
 // src/components/sections/GallerySection.jsx
 import React from 'react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 export default function GallerySection() {
   return (
-    <section className='py-20 px-4 bg-white'>
+    <section className='py-20 px-4 bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/20'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className='text-3xl md:text-4xl font-bold text-center mb-6 text-[#1a365d]'>
+        <h2 className='text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
           Our Work
         </h2>
-        <p className='text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto'>
+        <p className='text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto'>
           Browse through some of our recent detailing transformations
         </p>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -120,12 +121,9 @@ export default function GallerySection() {
           </div>
         </div>
         <div className='text-center mt-12'>
-          <a
-            href='/gallery'
-            className='inline-flex items-center justify-center px-8 py-3 bg-[#1a365d] text-white rounded-full hover:bg-opacity-90 transition-all'
-          >
-            View Full Gallery
-          </a>
+          <Button asChild size='lg' className='rounded-full'>
+            <a href='/gallery'>View Full Gallery</a>
+          </Button>
         </div>
       </div>
     </section>
