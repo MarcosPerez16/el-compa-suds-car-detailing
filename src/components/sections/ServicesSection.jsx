@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 export default function ServicesSection() {
   return (
-    <section className='py-20 px-4 bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/20'>
+    <section className='py-20 px-4'>
       <div className='max-w-6xl mx-auto'>
         <h2 className='text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
           Our Services
         </h2>
         <div className='grid md:grid-cols-3 gap-8'>
           {/* Exterior Detailing */}
-          <div className='bg-white/70 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-blue-50 group'>
+          <div className='bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group'>
             <div className='relative aspect-square w-full mb-4 rounded-lg overflow-hidden'>
               <Image
                 src='/images/services/service1.jpg'
@@ -29,7 +29,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Interior Detailing */}
-          <div className='bg-white/70 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-blue-50 group'>
+          <div className='bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group'>
             <div className='relative aspect-square w-full mb-4 rounded-lg overflow-hidden'>
               <Image
                 src='/images/services/service2.jpg'
@@ -48,7 +48,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Complete Package */}
-          <div className='bg-white/70 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-blue-50 group'>
+          <div className='bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group'>
             <div className='relative aspect-square w-full mb-4 rounded-lg overflow-hidden'>
               <Image
                 src='/images/services/service3.jpg'

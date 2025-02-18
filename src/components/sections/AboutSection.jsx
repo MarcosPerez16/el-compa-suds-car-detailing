@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function AboutSection() {
   return (
-    <section className='py-20 px-4 bg-gradient-to-br from-gray-50 to-orange-50/40'>
+    <section className='py-20 px-4'>
       <div className='max-w-3xl mx-auto text-center space-y-8'>
         <div className='space-y-6'>
           <h2 className='text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>

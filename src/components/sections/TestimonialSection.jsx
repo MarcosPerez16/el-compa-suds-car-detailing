@@ -83,7 +83,7 @@ function Avatar({ src, name, role }) {
 
 export default function TestimonialSection() {
   return (
-    <section className='py-16 bg-gradient-to-br from-gray-50 to-orange-50'>
+    <section className='py-16'>
       <div className='container mx-auto px-4 text-center'>
         <h2 className='text-4xl font-bold mb-12 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
           What Our Customers Say
@@ -94,7 +94,7 @@ export default function TestimonialSection() {
               key={index}
               className='group bg-white/70 shadow-lg hover:shadow-xl transition-all duration-300 border-border/50 hover:border-primary/50 transform hover:-translate-y-2 overflow-hidden'
             >
-              <CardHeader className='flex flex-col items-center pb-4 bg-gray-50/50 group-hover:bg-orange-50/50 transition-colors duration-300'>
+              <CardHeader className='flex flex-col items-center pb-4 bg-gray-50/50 transition-colors duration-300'>
                 <Avatar
                   src={testimonial.image}
                   name={testimonial.name}
