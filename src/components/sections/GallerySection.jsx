@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 export default function GallerySection() {
   return (
-    <section className='py-20 px-4 bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/20'>
+    <section className='py-20 px-4'>
       <div className='max-w-6xl mx-auto'>
         <h2 className='text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
           Our Work
