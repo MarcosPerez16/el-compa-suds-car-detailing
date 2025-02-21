@@ -122,7 +122,7 @@ export default function GallerySection() {
           </div>
         </div>
         <div className='text-center mt-12'>
-          <Link href='/contact'>
+          <Link href='/gallery'>
             <Button
               size='lg'
               className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'

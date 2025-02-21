@@ -262,23 +262,23 @@ const ServicesDetailPage = () => {
         </section>
 
         {/* Call to Action Section */}
-        <section className='mt-12 text-center space-y-4'>
+        <section className='mt-12 text-center space-y-6 px-4'>
           <h2 className='text-3xl font-bold text-black'>
             Ready to Transform Your Vehicle?
           </h2>
-          <p className='text-lg text-black'>
-            {' '}
-            {/* Changed to text-black */}
+          <p className='text-lg text-black mx-auto max-w-2xl'>
             Book your appointment now and get 10% off your first detailing
           </p>
-          <Link href='/contact' className='mt-6 inline-block'>
-            <Button
-              size='lg'
-              className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
-            >
-              Schedule Detailing
-            </Button>
-          </Link>
+          <div className='mt-6'>
+            <Link href='/contact' className='w-full sm:w-auto inline-block'>
+              <Button
+                size='lg'
+                className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full'
+              >
+                Schedule Detailing
+              </Button>
+            </Link>
+          </div>
         </section>
       </div>
     </>
