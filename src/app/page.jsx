@@ -5,7 +5,6 @@ import {
   ServicesSection,
   GallerySection,
   CTASection,
-  FooterSection,
   TestimonialSection,
   WhyChooseUsSection,
 } from '@/components/sections';
