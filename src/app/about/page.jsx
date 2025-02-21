@@ -20,14 +20,14 @@ const AboutUsPage = () => {
       <section className='py-20 px-4'>
         <div className='max-w-3xl mx-auto text-center space-y-8'>
           <div className='space-y-6'>
-            <h2 className='text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
+            <h2 className='text-3xl md:text-4xl font-bold text-black'>
               Our Story
             </h2>
-            <p className='text-lg text-muted-foreground leading-relaxed'>
+            <p className='text-lg text-black leading-relaxed'>
               At El Compa Suds, our story is one of passion and dedication to
               providing exceptional car care services. We've always believed
               that a well-maintained vehicle is a reflection of its owner. Our
-              journey began with a vision to create a auto wash that combines
+              journey began with a vision to create an auto wash that combines
               the convenience of express services with the quality and attention
               to detail you'd expect from a professional car wash.
             </p>
@@ -37,10 +37,10 @@ const AboutUsPage = () => {
           <div className='w-24 h-1 mx-auto bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-80'></div>
 
           <div className='space-y-6 pt-8'>
-            <h2 className='text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
+            <h2 className='text-3xl md:text-4xl font-bold text-black'>
               Our Values
             </h2>
-            <p className='text-lg text-muted-foreground leading-relaxed'>
+            <p className='text-lg text-black leading-relaxed'>
               We believe in delivering excellence with every service. Our
               certified detailers are trained to use the latest techniques and
               premium products that not only clean your vehicle but protect it

@@ -20,7 +20,6 @@ export default function Home() {
       <GallerySection />
       <TestimonialSection />
       <CTASection />
-      <FooterSection />
     </div>
   );
 }
