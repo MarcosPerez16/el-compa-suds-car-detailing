@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '../ui/button';
 
 export default function ServicesSection() {
   return (
@@ -65,6 +67,17 @@ export default function ServicesSection() {
               Full interior/exterior restoration with paint protection
             </p>
           </div>
+        </div>
+
+        <div className='mt-12 flex justify-center'>
+          <Link href='/services'>
+            <Button
+              size='lg'
+              className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full'
+            >
+              View All Services
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

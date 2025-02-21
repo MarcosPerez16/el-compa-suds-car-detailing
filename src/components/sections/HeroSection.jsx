@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
@@ -25,12 +26,14 @@ export default function HeroSection() {
           <p className='text-lg md:text-xl mb-8 text-primary-foreground/90'>
             Restore your car's showroom finish with our expert detailing
           </p>
-          <Button
-            size='lg'
-            className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
-          >
-            Schedule Detailing
-          </Button>
+          <Link href='/contact'>
+            <Button
+              size='lg'
+              className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+            >
+              Schedule Detailing
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function CTASection() {
   return (
@@ -10,9 +12,14 @@ export default function CTASection() {
         <p className='text-lg mb-8 text-black'>
           Book your appointment now and get 10% off your first detailing
         </p>
-        <button className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'>
-          Get Started Now
-        </button>
+        <Link href='/contact'>
+          <Button
+            size='lg'
+            className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+          >
+            Get Started Now
+          </Button>
+        </Link>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import PageBanner from '@/components/ui/PageBanner';
 import { Button } from '@/components/ui/button';
@@ -177,12 +178,16 @@ export default function GalleryPage() {
             <p className='text-lg text-black mb-6'>
               Schedule your appointment today and let us transform your vehicle
             </p>
-            <Button
-              size='lg'
-              className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
-            >
-              Request a Quote
-            </Button>
+            <div className='flex justify-center'>
+              <Link href='/contact'>
+                <Button
+                  size='lg'
+                  className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+                >
+                  Request A Quote
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

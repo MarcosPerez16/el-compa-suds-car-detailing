@@ -3,6 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import {
   Table,
   TableHeader,
@@ -269,9 +271,14 @@ const ServicesDetailPage = () => {
             {/* Changed to text-black */}
             Book your appointment now and get 10% off your first detailing
           </p>
-          <button className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'>
-            Schedule Detailing
-          </button>
+          <Link href='/contact' className='mt-6 inline-block'>
+            <Button
+              size='lg'
+              className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+            >
+              Schedule Detailing
+            </Button>
+          </Link>
         </section>
       </div>
     </>
