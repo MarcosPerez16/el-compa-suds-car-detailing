@@ -75,8 +75,8 @@ function Avatar({ src, name, role }) {
         alt={name}
         className='w-16 h-16 rounded-full object-cover mb-2'
       />
-      <h3 className='font-semibold text-lg'>{name}</h3>
-      <p className='text-sm text-muted-foreground'>{role}</p>
+      <h3 className='font-semibold text-lg text-black'>{name}</h3>
+      <p className='text-sm text-black'>{role}</p>
     </div>
   );
 }
@@ -85,14 +85,14 @@ export default function TestimonialSection() {
   return (
     <section className='py-16'>
       <div className='container mx-auto px-4 text-center'>
-        <h2 className='text-4xl font-bold mb-12 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
+        <h2 className='text-4xl font-bold mb-12 text-black'>
           What Our Customers Say
         </h2>
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className='group bg-white/70 shadow-lg hover:shadow-xl transition-all duration-300 border-border/50 hover:border-primary/50 transform hover:-translate-y-2 overflow-hidden'
+              className='group bg-white/70 shadow-lg hover:shadow-xl transition-all duration-300 border-border/50 hover:border-amber-500/50 transform hover:-translate-y-2 overflow-hidden'
             >
               <CardHeader className='flex flex-col items-center pb-4 bg-gray-50/50 transition-colors duration-300'>
                 <Avatar
@@ -103,8 +103,8 @@ export default function TestimonialSection() {
                 <StarRating rating={testimonial.rating} />
               </CardHeader>
               <CardContent className='relative pt-6 pb-8 px-6'>
-                <Quote className='absolute top-0 left-0 w-8 h-8 text-muted-foreground opacity-20' />
-                <p className='text-muted-foreground italic text-base leading-relaxed relative z-10 pl-8 transition-colors duration-300 group-hover:text-foreground'>
+                <Quote className='absolute top-0 left-0 w-8 h-8 text-black opacity-20' />
+                <p className='text-black italic text-base leading-relaxed relative z-10 pl-8 transition-colors duration-300'>
                   "{testimonial.review}"
                 </p>
               </CardContent>

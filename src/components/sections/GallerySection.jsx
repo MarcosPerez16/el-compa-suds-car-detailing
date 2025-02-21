@@ -7,10 +7,10 @@ export default function GallerySection() {
   return (
     <section className='py-20 px-4'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className='text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
+        <h2 className='text-3xl md:text-4xl font-bold text-center mb-6 text-black'>
           Our Work
         </h2>
-        <p className='text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto'>
+        <p className='text-lg text-black text-center mb-12 max-w-2xl mx-auto'>
           Browse through some of our recent detailing transformations
         </p>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -121,7 +121,11 @@ export default function GallerySection() {
           </div>
         </div>
         <div className='text-center mt-12'>
-          <Button asChild size='lg' className='rounded-full'>
+          <Button
+            asChild
+            size='lg'
+            className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+          >
             <a href='/gallery'>View Full Gallery</a>
           </Button>
         </div>

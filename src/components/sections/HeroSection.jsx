@@ -27,7 +27,7 @@ export default function HeroSection() {
           </p>
           <Button
             size='lg'
-            className='bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+            className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
           >
             Schedule Detailing
           </Button>

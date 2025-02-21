@@ -5,7 +5,7 @@ export default function ServicesSection() {
   return (
     <section className='py-20 px-4'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className='text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
+        <h2 className='text-3xl md:text-4xl font-bold text-center mb-12 text-black'>
           Our Services
         </h2>
         <div className='grid md:grid-cols-3 gap-8'>
@@ -20,10 +20,10 @@ export default function ServicesSection() {
                 className='object-cover group-hover:scale-105 transition-transform duration-500'
               />
             </div>
-            <h3 className='text-xl font-semibold mb-3 text-primary'>
+            <h3 className='text-xl font-semibold mb-3 text-black'>
               Exterior Detailing
             </h3>
-            <p className='text-muted-foreground'>
+            <p className='text-black'>
               Paint correction, ceramic coating, and wheel restoration
             </p>
           </div>
@@ -39,10 +39,10 @@ export default function ServicesSection() {
                 className='object-cover group-hover:scale-105 transition-transform duration-500'
               />
             </div>
-            <h3 className='text-xl font-semibold mb-3 text-primary'>
+            <h3 className='text-xl font-semibold mb-3 text-black'>
               Interior Detailing
             </h3>
-            <p className='text-muted-foreground'>
+            <p className='text-black'>
               Deep cleaning, odor removal, and leather conditioning
             </p>
           </div>
@@ -58,10 +58,10 @@ export default function ServicesSection() {
                 className='object-cover group-hover:scale-105 transition-transform duration-500'
               />
             </div>
-            <h3 className='text-xl font-semibold mb-3 text-primary'>
+            <h3 className='text-xl font-semibold mb-3 text-black'>
               Complete Package
             </h3>
-            <p className='text-muted-foreground'>
+            <p className='text-black'>
               Full interior/exterior restoration with paint protection
             </p>
           </div>

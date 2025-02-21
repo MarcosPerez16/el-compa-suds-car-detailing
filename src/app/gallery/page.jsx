@@ -117,10 +117,10 @@ export default function GalleryPage() {
       <section className='py-20 px-4'>
         <div className='max-w-7xl mx-auto'>
           <div className='mb-12 text-center'>
-            <h2 className='text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
+            <h2 className='text-3xl md:text-4xl font-bold mb-4 text-black'>
               Our Work Showcase
             </h2>
-            <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
+            <p className='text-lg text-black max-w-3xl mx-auto'>
               Browse through our portfolio of detailing transformations and see
               the quality of our work. Each project represents our commitment to
               excellence.
@@ -132,8 +132,12 @@ export default function GalleryPage() {
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={activeFilter === category ? 'default' : 'outline'}
-                className='rounded-full'
+                variant={activeFilter === category ? 'solid' : 'outline'} // Change variant to 'solid' for active state
+                className={`rounded-full ${
+                  activeFilter === category
+                    ? 'bg-black text-white'
+                    : 'border-black text-black'
+                }`} // Add custom styles for active/inactive buttons
                 onClick={() => setActiveFilter(category)}
               >
                 {category}
@@ -167,13 +171,16 @@ export default function GalleryPage() {
 
           {/* Call to Action */}
           <div className='text-center mt-16'>
-            <h3 className='text-2xl font-bold text-blue-900 mb-4'>
+            <h3 className='text-2xl font-bold text-black mb-4'>
               Ready to experience our detailing services?
             </h3>
-            <p className='text-lg text-gray-600 mb-6'>
+            <p className='text-lg text-black mb-6'>
               Schedule your appointment today and let us transform your vehicle
             </p>
-            <Button size='lg' className='rounded-full'>
+            <Button
+              size='lg'
+              className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+            >
               Request a Quote
             </Button>
           </div>

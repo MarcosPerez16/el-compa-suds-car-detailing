@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/navbar/navbar';
+import { FooterSection } from '@/components/sections';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
         <main className='flex-1 w-full'>
           <div className='max-w-[2520px] mx-auto'>{children}</div>
         </main>
+        <FooterSection />
       </body>
     </html>
   );

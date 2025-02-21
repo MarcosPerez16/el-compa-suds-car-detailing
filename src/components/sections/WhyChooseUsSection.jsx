@@ -29,10 +29,10 @@ export default function WhyChooseUsSection() {
           {/* Content Section */}
           <div className='space-y-6 sm:space-y-8'>
             <div className='space-y-3 sm:space-y-4'>
-              <h2 className='text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
+              <h2 className='text-3xl sm:text-4xl font-bold text-black'>
                 Why Choose Us
               </h2>
-              <p className='text-lg sm:text-xl text-muted-foreground leading-relaxed'>
+              <p className='text-lg sm:text-xl text-black leading-relaxed'>
                 Experience the perfect blend of precision, passion, and
                 <span className='hidden sm:inline'> professionalism</span>
                 <span className='sm:hidden'> pro</span> in every detail.
@@ -46,15 +46,15 @@ export default function WhyChooseUsSection() {
                   className='flex gap-4 group hover:transform hover:translate-x-1 transition-all duration-250 ease-out'
                 >
                   <div className='flex-shrink-0'>
-                    <div className='w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary flex items-center justify-center transition-all group-hover:rotate-[15deg]'>
-                      <reason.icon className='w-5 h-5 sm:w-6 sm:h-6 text-white transition-transform' />
+                    <div className='w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500 hover:bg-amber-600 flex items-center justify-center transition-all group-hover:rotate-[15deg]'>
+                      <reason.icon className='w-5 h-5 sm:w-6 sm:h-6 text-black transition-transform' />
                     </div>
                   </div>
                   <div className='space-y-1.5'>
-                    <h3 className='text-lg font-semibold bg-gradient-to-r from-blue-900 to-blue-800 bg-clip-text text-transparent'>
+                    <h3 className='text-lg font-semibold text-black'>
                       {reason.title}
                     </h3>
-                    <p className='text-sm sm:text-[15px] text-muted-foreground leading-relaxed'>
+                    <p className='text-sm sm:text-[15px] text-black leading-relaxed'>
                       {reason.description}
                     </p>
                   </div>

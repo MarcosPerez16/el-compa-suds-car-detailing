@@ -157,10 +157,11 @@ const ServicesDetailPage = () => {
           <section key={service.title} className='mt-12'>
             <Card className='w-full'>
               <CardHeader>
-                <CardTitle className='text-2xl text-blue-900'>
+                <CardTitle className='text-2xl text-black'>
                   {service.title}
                 </CardTitle>
-                <p className='text-gray-600'>{service.description}</p>
+                <p className='text-black'>{service.description}</p>{' '}
+                {/* Changed to text-black */}
               </CardHeader>
               <CardContent>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
@@ -179,8 +180,10 @@ const ServicesDetailPage = () => {
                           </div>
                         </div>
                         <CardHeader className='border-b bg-gray-50'>
-                          <CardTitle className='text-xl'>{tier.name}</CardTitle>
-                          <p className='text-2xl font-bold text-blue-900'>
+                          <CardTitle className='text-xl text-black'>
+                            {tier.name}
+                          </CardTitle>
+                          <p className='text-2xl font-bold text-black'>
                             {tier.price}
                           </p>
                         </CardHeader>
@@ -201,7 +204,7 @@ const ServicesDetailPage = () => {
                                     d='M5 13l4 4L19 7'
                                   />
                                 </svg>
-                                <span>{item}</span>
+                                <span className='text-black'>{item}</span>
                               </li>
                             ))}
                           </ul>
@@ -219,30 +222,35 @@ const ServicesDetailPage = () => {
         <section className='mt-12'>
           <Card>
             <CardHeader>
-              <CardTitle className='text-2xl text-blue-900'>
+              <CardTitle className='text-2xl text-black'>
                 Additional Services
               </CardTitle>
-              <p className='text-gray-600'>
-                Customize your detailing package with these add-on services
+              <p className='text-black'>
+                Customize your detailing package with these add-on services{' '}
+                {/* Changed to text-black */}
               </p>
             </CardHeader>
             <CardContent>
               <Table className='block'>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Service</TableHead>
-                    <TableHead>Price</TableHead>
-                    <TableHead>Description</TableHead>
+                    <TableHead className='text-black'>Service</TableHead>
+                    <TableHead className='text-black'>Price</TableHead>
+                    <TableHead className='text-black'>Description</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {additionalServices.map((service, index) => (
                     <TableRow key={service.name}>
-                      <TableCell className='font-medium'>
+                      <TableCell className='font-medium text-black'>
                         {service.name}
                       </TableCell>
-                      <TableCell>{service.price}</TableCell>
-                      <TableCell>{service.description}</TableCell>
+                      <TableCell className='text-black'>
+                        {service.price}
+                      </TableCell>
+                      <TableCell className='text-black'>
+                        {service.description}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -253,13 +261,15 @@ const ServicesDetailPage = () => {
 
         {/* Call to Action Section */}
         <section className='mt-12 text-center space-y-4'>
-          <h2 className='text-3xl font-bold text-blue-900'>
+          <h2 className='text-3xl font-bold text-black'>
             Ready to Transform Your Vehicle?
           </h2>
-          <p className='text-lg text-gray-600'>
+          <p className='text-lg text-black'>
+            {' '}
+            {/* Changed to text-black */}
             Book your appointment now and get 10% off your first detailing
           </p>
-          <button className='bg-blue-900 text-white px-8 py-3 rounded-md hover:bg-blue-800 transition-colors'>
+          <button className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'>
             Schedule Detailing
           </button>
         </section>
