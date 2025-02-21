@@ -1,6 +1,7 @@
 // src/components/sections/GallerySection.jsx
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export default function GallerySection() {
@@ -121,13 +122,14 @@ export default function GallerySection() {
           </div>
         </div>
         <div className='text-center mt-12'>
-          <Button
-            asChild
-            size='lg'
-            className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
-          >
-            <a href='/gallery'>View Full Gallery</a>
-          </Button>
+          <Link href='/contact'>
+            <Button
+              size='lg'
+              className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+            >
+              View Full Gallery
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
