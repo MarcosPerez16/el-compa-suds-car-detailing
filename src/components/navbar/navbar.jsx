@@ -24,7 +24,7 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href='/'
-          className='font-bold text-xl flex items-center gap-2 text-black hover:text-primary/90 transition-colors'
+          className='font-bold text-xl flex items-center gap-2 text-black hover:text-amber-500 transition-colors'
         >
           <Image
             src='/images/branding/logo-img-transparent.png'
@@ -42,7 +42,7 @@ export function Navbar() {
             <Link
               key={route.href}
               href={route.href}
-              className='text-sm font-medium text-black transition-colors hover:text-primary'
+              className='text-sm font-medium text-black transition-colors hover:text-amber-500 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-amber-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300'
             >
               {route.label}
             </Link>
@@ -55,7 +55,7 @@ export function Navbar() {
             <Button
               variant='ghost'
               size='icon'
-              className='text-black hover:text-primary'
+              className='text-black hover:text-amber-500'
             >
               <Menu className='h-6 w-6' />
               <span className='sr-only'>Toggle menu</span>
@@ -67,7 +67,7 @@ export function Navbar() {
                 <Link
                   key={route.href}
                   href={route.href}
-                  className='text-sm font-medium text-black transition-colors hover:text-primary'
+                  className='text-sm font-medium text-black transition-colors hover:text-amber-500 border-l-2 border-transparent hover:border-amber-500 pl-2'
                   onClick={() => setIsOpen(false)}
                 >
                   {route.label}
