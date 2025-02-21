@@ -178,11 +178,11 @@ export default function GalleryPage() {
             <p className='text-lg text-black mb-6'>
               Schedule your appointment today and let us transform your vehicle
             </p>
-            <div className='flex justify-center'>
-              <Link href='/contact'>
+            <div className='flex justify-center w-full'>
+              <Link href='/contact' className='w-full sm:w-auto'>
                 <Button
                   size='lg'
-                  className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+                  className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full'
                 >
                   Request A Quote
                 </Button>
