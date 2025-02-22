@@ -1,27 +1,7 @@
-import { Medal, Clock, Banknote } from 'lucide-react';
+// src/app/components/sections/WhyChooseUsSection.js
+import { reasons } from './whyChooseUsData';
 
 export default function WhyChooseUsSection() {
-  const reasons = [
-    {
-      icon: Medal,
-      title: 'Expertise',
-      description:
-        'Our certified detailing experts bring years of experience and advanced techniques to every vehicle, ensuring premium results that exceed expectations.',
-    },
-    {
-      icon: Clock,
-      title: 'Efficiency',
-      description:
-        'We respect your time with our streamlined process, delivering thorough and professional detailing services without unnecessary delays.',
-    },
-    {
-      icon: Banknote,
-      title: 'Affordability',
-      description:
-        'Premium quality does not have to break the bank. We offer competitive prices while maintaining the highest standards in car detailing.',
-    },
-  ];
-
   return (
     <section className='py-12 sm:py-16 lg:py-20'>
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>

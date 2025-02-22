@@ -119,7 +119,7 @@ export default function FooterSection() {
 
         {/* Bottom Copyright Bar */}
         <div className='border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400'>
-          <p>© 2024 Premium Auto Detailing. All rights reserved.</p>
+          <p>© 2025 Premium Auto Detailing. All rights reserved.</p>
         </div>
       </div>
     </footer>
