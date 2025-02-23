@@ -4,7 +4,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+  SheetDescription,
+} from '@/components/ui/sheet';
 import Image from 'next/image';
 
 const routes = [
@@ -62,6 +68,10 @@ export function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent side='right'>
+            <SheetTitle className='text-black'>Navigation Menu</SheetTitle>
+            <SheetDescription className='text-black/70'>
+              Access all pages
+            </SheetDescription>
             <div className='flex flex-col gap-4 mt-4'>
               {routes.map((route) => (
                 <Link
