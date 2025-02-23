@@ -24,9 +24,9 @@ export default function PageBanner({
       >
         <Image
           src='/images/banners/HeroSectionBanner.webp'
+          priority
           alt='Car Detailing Banner'
           fill
-          priority
           className='object-cover'
         />
       </div>

@@ -40,6 +40,7 @@ export default function AboutSection() {
               src='/images/about/image1.jpg'
               alt='El Compa Suds Detailing Team'
               fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               className='object-cover'
             />
           </div>
