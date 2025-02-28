@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -13,6 +13,9 @@ export default function GallerySection() {
     once: true,
     margin: '0px 0px -200px 0px', // Trigger earlier when scrolling
   });
+
+  // Track touched items for mobile
+  const [touchedItem, setTouchedItem] = useState(null);
 
   // Animation variants with slower transitions
   const titleVariants = {
@@ -65,6 +68,26 @@ export default function GallerySection() {
     },
   };
 
+  const buttonHoverVariants = {
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.5 },
+    },
+    tap: {
+      scale: 0.95,
+      transition: { duration: 0.2 },
+    },
+  };
+
+  // Handle touch events for mobile
+  const handleTouch = (index) => {
+    if (touchedItem === index) {
+      setTouchedItem(null); // Toggle off if already selected
+    } else {
+      setTouchedItem(index); // Toggle on
+    }
+  };
+
   return (
     <section className='py-20 px-4' ref={ref}>
       <div className='max-w-6xl mx-auto'>
@@ -96,6 +119,8 @@ export default function GallerySection() {
               custom={index}
               variants={galleryItemVariants}
               whileHover={{ scale: 1.03, transition: { duration: 0.4 } }}
+              onClick={() => handleTouch(index)}
+              onTouchStart={() => handleTouch(index)}
             >
               <Image
                 src={item.src}
@@ -104,16 +129,18 @@ export default function GallerySection() {
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='object-cover transition-transform duration-500 group-hover:scale-110'
               />
-              <motion.div
-                className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1, transition: { duration: 0.5 } }}
+              <div
+                className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-500 ${
+                  touchedItem === index
+                    ? 'opacity-100'
+                    : 'opacity-0 group-hover:opacity-100'
+                }`}
               >
                 <div className='absolute bottom-0 left-0 right-0 p-4'>
                   <h3 className='text-white font-semibold'>{item.title}</h3>
                   <p className='text-white/90 text-sm'>{item.category}</p>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -125,15 +152,18 @@ export default function GallerySection() {
           variants={buttonVariants}
         >
           <Link href='/gallery' className='w-full sm:w-auto inline-block'>
-            <Button
-              size='lg'
-              className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
-              transition={{ duration: 0.5 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+            <motion.div
+              whileHover='hover'
+              whileTap='tap'
+              variants={buttonHoverVariants}
             >
-              View Full Gallery
-            </Button>
+              <Button
+                size='lg'
+                className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full sm:w-auto'
+              >
+                View Full Gallery
+              </Button>
+            </motion.div>
           </Link>
         </motion.div>
       </div>
