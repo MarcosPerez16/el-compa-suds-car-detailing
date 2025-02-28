@@ -1,11 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React from 'react';
 import PageBanner from '@/components/ui/PageBanner';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import {
   Card,
   CardContent,
@@ -14,6 +10,7 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from 'lucide-react';
+import ContactForm from '@/components/contactform/ContactForm';
 
 export default function ContactPage() {
   // Create breadcrumbs for the Contact page
@@ -21,33 +18,6 @@ export default function ContactPage() {
     { label: 'Home', path: '/' },
     { label: 'Contact', path: '/contact' },
   ];
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    try {
-      // In a real app, you would send this data to your backend
-      console.log('Form data:', data);
-
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      setSubmitSuccess(true);
-      setIsSubmitting(false);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <main>
@@ -165,162 +135,7 @@ export default function ContactPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  {submitSuccess ? (
-                    <div className='bg-green-50 border border-green-200 text-black rounded-lg p-6 text-center'>
-                      <h3 className='font-bold text-xl mb-2'>Message Sent!</h3>
-                      <p>
-                        Thank you for reaching out. We'll get back to you
-                        shortly.
-                      </p>
-                      <Button
-                        className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full mt-4'
-                        onClick={() => setSubmitSuccess(false)}
-                      >
-                        Send Another Message
-                      </Button>
-                    </div>
-                  ) : (
-                    <form
-                      onSubmit={handleSubmit(onSubmit)}
-                      className='space-y-4'
-                    >
-                      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                        <div className='space-y-2'>
-                          <label
-                            htmlFor='name'
-                            className='font-medium text-black'
-                          >
-                            Name
-                          </label>
-                          <Input
-                            id='name'
-                            placeholder='Your Name'
-                            className='placeholder:text-black text-black'
-                            {...register('name', {
-                              required: 'Name is required',
-                            })}
-                          />
-                          {errors.name && (
-                            <p className='text-red-500 text-sm'>
-                              {errors.name.message}
-                            </p>
-                          )}
-                        </div>
-
-                        <div className='space-y-2'>
-                          <label
-                            htmlFor='email'
-                            className='font-medium text-black'
-                          >
-                            Email
-                          </label>
-                          <Input
-                            id='email'
-                            type='email'
-                            placeholder='your.email@example.com'
-                            className='placeholder:text-black text-black'
-                            {...register('email', {
-                              required: 'Email is required',
-                              pattern: {
-                                value:
-                                  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                message: 'Invalid email address',
-                              },
-                            })}
-                          />
-                          {errors.email && (
-                            <p className='text-red-500 text-sm'>
-                              {errors.email.message}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className='space-y-2'>
-                        <label
-                          htmlFor='phone'
-                          className='font-medium text-black'
-                        >
-                          Phone (Optional)
-                        </label>
-                        <Input
-                          id='phone'
-                          placeholder='(123) 456-7890'
-                          className='placeholder:text-black text-black'
-                          {...register('phone')}
-                        />
-                      </div>
-
-                      <div className='space-y-2'>
-                        <label
-                          htmlFor='service'
-                          className='font-medium text-black'
-                        >
-                          Service Interested In
-                        </label>
-                        <select
-                          id='service'
-                          className='w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background text-black'
-                          style={{ color: 'black' }}
-                          {...register('service')}
-                        >
-                          <option value=''>Select a service</option>
-                          <option value='Basic Exterior'>Basic Exterior</option>
-                          <option value='Premium Exterior'>
-                            Premium Exterior
-                          </option>
-                          <option value='Ultimate Exterior'>
-                            Ultimate Exterior
-                          </option>
-                          <option value='Basic Interior'>Basic Interior</option>
-                          <option value='Premium Interior'>
-                            Premium Interior
-                          </option>
-                          <option value='Ultimate Interior'>
-                            Ultimate Interior
-                          </option>
-                          <option value='Ceramic Coating'>
-                            Ceramic Coating
-                          </option>
-                          <option value='Paint Protection Film'>
-                            Paint Protection Film
-                          </option>
-                          <option value='Other'>Other</option>
-                        </select>
-                      </div>
-
-                      <div className='space-y-2'>
-                        <label
-                          htmlFor='message'
-                          className='font-medium text-black'
-                        >
-                          Message
-                        </label>
-                        <Textarea
-                          id='message'
-                          placeholder='Tell us about your vehicle and what you need...'
-                          className='placeholder:text-black text-black'
-                          rows={5}
-                          {...register('message', {
-                            required: 'Message is required',
-                          })}
-                        />
-                        {errors.message && (
-                          <p className='text-red-500 text-sm'>
-                            {errors.message.message}
-                          </p>
-                        )}
-                      </div>
-
-                      <Button
-                        type='submit'
-                        className='bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full w-full'
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? 'Sending...' : 'Send Message'}
-                      </Button>
-                    </form>
-                  )}
+                  <ContactForm />
                 </CardContent>
               </Card>
             </div>
