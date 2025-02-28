@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -24,6 +25,7 @@ const routes = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   // Animation variants with slower transitions
   const navbarVariants = {
@@ -63,6 +65,16 @@ export function Navbar() {
     },
   };
 
+  // Check if the route is active
+  const isActive = (href) => {
+    // Exact match for home page
+    if (href === '/') {
+      return pathname === '/';
+    }
+    // Partial match for other pages (e.g., /services/detail would match /services)
+    return pathname.startsWith(href);
+  };
+
   return (
     <motion.header
       initial='hidden'
@@ -100,7 +112,11 @@ export function Navbar() {
             >
               <Link
                 href={route.href}
-                className='text-sm font-medium text-black transition-colors hover:text-amber-500 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-amber-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-500'
+                className={`text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-amber-500 after:transition-transform after:duration-500 ${
+                  isActive(route.href)
+                    ? 'text-amber-500 after:scale-x-100'
+                    : 'text-black hover:text-amber-500 after:scale-x-0 hover:after:scale-x-100'
+                }`}
               >
                 {route.label}
               </Link>
@@ -141,7 +157,11 @@ export function Navbar() {
                 >
                   <Link
                     href={route.href}
-                    className='text-sm font-medium text-black transition-colors hover:text-amber-500 border-l-2 border-transparent hover:border-amber-500 pl-2'
+                    className={`text-sm font-medium transition-colors pl-2 border-l-2 ${
+                      isActive(route.href)
+                        ? 'text-amber-500 border-amber-500'
+                        : 'text-black hover:text-amber-500 border-transparent hover:border-amber-500'
+                    }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {route.label}
